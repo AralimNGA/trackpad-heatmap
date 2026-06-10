@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node
+node_modules/
+**/node_modules/
+
+# Python
+.venv/
+venv/
+**/__pycache__/
+*.pyc
+
+# Build output
+dist/
+build/
+DerivedData/
+.build/
+
+# Compiled Swift binary & artifacts
+trackpad-heatmap
+*.o
+*.dSYM/
+*.swiftmodule
+*.swiftpm
+
+# Editors
+.vscode/
+.idea/
+
+# Secrets / env
+.env
+.env.local
+**/.env
