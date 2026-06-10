@@ -66,4 +66,4 @@ A few honest caveats worth knowing:
 
 ## Screenshots
 
-_Screenshot coming soon._ Run the tool and lay your hand flat on the trackpad to see the palm and fingers rendered as ellipses.
+![Live trackpad heatmap with multiple contacts](screenshots/demo.png)
