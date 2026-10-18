@@ -2,12 +2,12 @@
 
 > Real-time heatmap of every MacBook trackpad contact point, read straight from macOS's private MultitouchSupport framework.
 
-A native macOS tool written in Swift that visualizes all live trackpad contacts — position, size, pressure proxy, angle, and ellipse axes — as a colored heatmap. It reads the raw touch data directly from the private `MultitouchSupport.framework` (the same source the internal Apple diagnostics tools use) via `dlopen`/`dlsym`, including pulling the framework out of the dyld shared cache on Apple Silicon. Lay your whole hand on the trackpad and you can clearly see the palm as a large ellipse plus the five fingers as smaller ones.
+A native macOS tool written in Swift that visualizes all live trackpad contacts — position, size, pressure proxy, angle, and ellipse axes — as a colored heatmap. It reads the raw touch data directly from the private `MultitouchSupport.framework` via `dlopen`/`dlsym`; on Apple Silicon the framework is resolved from the dyld shared cache. Lay your whole hand on the trackpad and you can clearly see the palm as a large ellipse plus the five fingers as smaller ones.
 
 ## Features
 
 - Real-time visualization of all trackpad contacts as a colored heatmap with discrete pressure steps (LED-grid look)
-- Reads raw data from the private `MultitouchSupport.framework` via `dlopen`/`dlsym`, including resolving it from the dyld shared cache on Apple Silicon
+- Reads raw data from the private `MultitouchSupport.framework` via `dlopen`/`dlsym` (resolved from the dyld shared cache on Apple Silicon)
 - Each contact drawn as a rotated ellipse with major/minor axis (in mm), angle, and a pressure proxy
 - Persistence buffer with slow decay builds a lingering hand "imprint" over time
 - 2D Gaussian-splat field computation with 4×4 subsampling for clean anti-aliasing of the ellipses
@@ -61,7 +61,7 @@ Complete and working. This is a functional prototype / exploration tool.
 
 A few honest caveats worth knowing:
 
-- `MultitouchSupport.framework` is a **private** Apple framework, so the `Finger` struct layout could change in a future macOS release. It has been stable across macOS 12–15.
+- `MultitouchSupport.framework` is a **private** Apple framework, so the `Finger` struct layout could change in a future macOS release.
 - On Apple Silicon the framework lives in the dyld shared cache rather than on disk; `dlopen` still resolves it.
 
 ## Screenshots
