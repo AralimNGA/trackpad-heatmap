@@ -67,3 +67,11 @@ A few honest caveats worth knowing:
 ## Screenshots
 
 ![Live trackpad heatmap with multiple contacts](screenshots/demo.png)
+
+## How it was made
+
+Built with the help of an AI coding agent (Claude Code).
+
+## License
+
+MIT, see [LICENSE](LICENSE).
